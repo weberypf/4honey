@@ -1,0 +1,22 @@
+{% if latest_message_list %}
+    {% for item in latest_message_list %}
+    <a href="#" class="list-group-item">
+        <h4 class="list-group-item-heading">{{ item.time_str }}</h4>
+        <p class="list-group-item-text">
+            {{ item }}
+            <div><img src="http://apis.map.qq.com/ws/staticmap/v2/?center={{ item.latitude }},{{ item.longitude }}&markers=color:blue|label:A|{{ item.latitude }},{{ item.longitude }}&zoom=15&size=260x300&maptype=hybrid&key=OBNBZ-JRLWR-6DWWW-WQFYY-VZEOZ-ERF3S"></div>
+        </p>
+
+        {% if item.file_path %}
+        <p class="list-group-item-text">
+            {% if item.type == 1 or item.type == 2 %}
+            <img src="{{ item.file_path }}">
+            {% endif %}
+        </p>
+        {% endif %}
+    </a>
+    {% endfor %}
+    <a href="#" class="list-group-item btn btn-primary more" name="{% url 'monitor:prev' min_id %}">查看更多>></a>
+{% else %}
+<a href="#" class="list-group-item text-center">没了，就这么些了。</a>
+{% endif %}

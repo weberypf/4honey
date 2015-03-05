@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>UPLOAD GPS INFO DEMO</h1>
+<form action="/monitor/recive_file/" enctype="multipart/form-data" method="POST">
+    <table>
+        <tr>
+            <td>type</td>
+            <td><input type="text" name="type"></td>
+        </tr>
+        <tr>
+            <td>log_time</td>
+            <td><input type="text" name="log_time"></td>
+        </tr>
+        <tr>
+            <td>latitude</td>
+            <td><input type="text" name="latitude"></td>
+        </tr>
+        <tr>
+            <td>longitude</td>
+            <td><input type="text" name="longitude"></td>
+        </tr>
+        <tr>
+            <td>altitude</td>
+            <td><input type="text" name="altitude"></td>
+        </tr>
+        <tr>
+            <td>address</td>
+            <td><input type="text" name="address"></td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td><input type="text" name="name"></td>
+        </tr>
+        <tr>
+            <td>file</td>
+            <td><input type="file" name="file"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="上传"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
